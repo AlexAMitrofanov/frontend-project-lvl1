@@ -4,7 +4,7 @@
   "description": "project mind games",
   "main": "index.js",
   "bin": {
-     "brain-games": "./bin/brain-games.js"
+    "brain-games": "./bin/brain-games.js"
   },
   "type": "module",
   "scripts": {
