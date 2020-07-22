@@ -1,3 +1,6 @@
+
 import readlineSinc from 'readline-sync';
 
-const name = readlineSinc.question('May I have your name?');
+export const name = () => {
+  return  readlineSinc.question('May I have your name? ');
+}
