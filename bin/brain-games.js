@@ -6,4 +6,4 @@ console.log('Welcome to the Brain Games!');
 
 const privetstvie = name();
 
-console.log(`Hello, ${privetstvie}!`)
+console.log(`Hello, ${privetstvie}!`);
