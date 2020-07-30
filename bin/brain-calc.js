@@ -38,7 +38,7 @@ const igra = (a) => {
     console.log('Correct!');
     return igra(a + 1);
   }
-  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${number1 * number2}".\nLet's try again, ${name}!`);
+  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".\nLet's try again, ${name}!`);
 };
 
 igra(0);
