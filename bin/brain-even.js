@@ -24,10 +24,10 @@ const igra = (a) => {
     return igra(a + 1);
   }
   if (answ === 'yes' && number % 2 !== 0) {
-    console.log(`"yes" is the wrong answer ;(. Correct answer was "no".\nLet's try again, ${name}!`);
+    return console.log(`"yes" is the wrong answer ;(. Correct answer was "no".\nLet's try again, ${name}!`);
   }
   if (answ === 'no' && number % 2 === 0) {
-    console.log(`"no" is the wrong answer ;(. Correct answer was "yes".\nLet's try again, ${name}!`);
+    return console.log(`"no" is the wrong answer ;(. Correct answer was "yes".\nLet's try again, ${name}!`);
   }
 
   return console.log(`This is the wrong answer.\nLet's try again, ${name}!`);
