@@ -19,15 +19,15 @@ const igra = (a) => {
   const number2 = Math.floor(Math.random() * 10);
   const det = Math.random();
 
-  if (det <= 0.3333) {
+  if (det <= 1 / 3) {
     quest = number1 + number2;
     console.log(`Question: ${number1} + ${number2}`);
   }
-  if (det > 0.3333 && det <= 0.6666) {
+  if (det > 1 / 3 && det <= 2 / 3) {
     quest = number1 - number2;
     console.log(`Question: ${number1} - ${number2}`);
   }
-  if (det > 0.6666) {
+  if (det > 2 / 3) {
     quest = number1 * number2;
     console.log(`Question: ${number1} * ${number2}`);
   }
