@@ -18,19 +18,13 @@ const igra = (a) => {
   const number = Math.floor(Math.random() * 100);
   console.log(`Question: ${number}`);
   const answ = readlineSinc.question('Your answer: ');
+  const vopr = (number % 2 === 0) ? 'yes' : 'no';
 
   if ((answ === 'yes' && number % 2 === 0) || (answ === 'no' && number % 2 !== 0)) {
-    console.log('correct');
+    console.log('Correct!');
     return igra(a + 1);
   }
-  if (answ === 'yes' && number % 2 !== 0) {
-    return console.log(`"yes" is the wrong answer ;(. Correct answer was "no".\nLet's try again, ${name}!`);
-  }
-  if (answ === 'no' && number % 2 === 0) {
-    return console.log(`"no" is the wrong answer ;(. Correct answer was "yes".\nLet's try again, ${name}!`);
-  }
-
-  return console.log(`This is the wrong answer.\nLet's try again, ${name}!`);
+  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${vopr}".\nLet's try again, ${name}!`);
 };
 
 igra(0);
