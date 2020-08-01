@@ -1,9 +1,6 @@
 import readlineSinc from 'readline-sync';
 
-const brCalc = (a) => {
-  if (a === 0) {
-    console.log('What is the result of the expression?');
-  }
+const brCalc = () => {
   let quest;
   const number = Math.floor(Math.random() * 100);
   const number1 = Math.floor(Math.random() * 10);
