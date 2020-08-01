@@ -8,13 +8,13 @@ const name = readlineSinc.question('May I have your name? ');
 
 console.log(`Hello, ${name}!`);
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
 const igra = (a) => {
   if (a === 3) {
     return console.log(`Congratulations, ${name}!`);
   }
-
+  if (a === 0) {
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  }
   const number = Math.floor(Math.random() * 100);
   console.log(`Question: ${number}`);
   const answ = readlineSinc.question('Your answer: ');
