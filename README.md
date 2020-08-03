@@ -4,6 +4,9 @@
 
 [![Nodejs CI](https://github.com/AlexAMitrofanov/frontend-project-lvl1/workflows/Nodejs%20CI/badge.svg)](https://github.com/AlexAMitrofanov/frontend-project-lvl1/actions)
 
-Asciinema brain-even: https://asciinema.org/a/VkekZdgrYC40UyR2lcFaQ2IBu
 
-Asciinema brain-celc: https://asciinema.org/a/aP2wqcoYlGN9zhQBW0nURwdo7
+[![brain-even](https://asciinema.org/a/VkekZdgrYC40UyR2lcFaQ2IBu.svg)](https://asciinema.org/a/VkekZdgrYC40UyR2lcFaQ2IBu)
+
+[![brain-calc](https://asciinema.org/a/aP2wqcoYlGN9zhQBW0nURwdo7.svg)](https://asciinema.org/a/aP2wqcoYlGN9zhQBW0nURwdo7)
+
+[![brain-gcd](https://asciinema.org/a/7qF8wK7D5vlOcUFyq1HH6LfuQ.svg)](https://asciinema.org/a/7qF8wK7D5vlOcUFyq1HH6LfuQ)
