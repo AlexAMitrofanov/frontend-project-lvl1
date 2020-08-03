@@ -2,4 +2,4 @@
 
 import { igraCalc } from '../src/index.js';
 
-igraCalc(0);
+igraCalc();
