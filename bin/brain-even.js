@@ -2,4 +2,4 @@
 
 import { igraEv } from '../src/index.js';
 
-igraEv(0);
+igraEv();
