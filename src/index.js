@@ -1,6 +1,7 @@
 import readlineSinc from 'readline-sync';
 import brCalc from './games/brainCalGame.js';
 import brEv from './games/brainEvGame.js';
+import brGcd from './games/brainGcdGame.js';
 
 console.log('Welcome to the Brain Games');
 
@@ -28,4 +29,9 @@ export const igraCalc = () => {
 export const igraEv = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   return igraLogic(0, brEv);
+};
+
+export const igraGcd = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+  return igraLogic(0, brGcd);
 };
