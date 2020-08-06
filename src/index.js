@@ -2,6 +2,7 @@ import readlineSinc from 'readline-sync';
 import brCalc from './games/brainCalGame.js';
 import brEv from './games/brainEvGame.js';
 import brGcd from './games/brainGcdGame.js';
+import brProg from './games/brainProgGame.js';
 
 console.log('Welcome to the Brain Games');
 
@@ -34,4 +35,9 @@ export const igraEv = () => {
 export const igraGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
   return igraLogic(0, brGcd);
+};
+
+export const igraProg = () => {
+  console.log('What number is missing in the progression?');
+  return igraLogic(0, brProg);
 };
