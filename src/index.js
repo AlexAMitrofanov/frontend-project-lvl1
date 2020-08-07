@@ -3,6 +3,7 @@ import brCalc from './games/brainCalGame.js';
 import brEv from './games/brainEvGame.js';
 import brGcd from './games/brainGcdGame.js';
 import brProg from './games/brainProgGame.js';
+import brPrime from './games/brainPrimeGame.js';
 
 console.log('Welcome to the Brain Games');
 
@@ -40,4 +41,9 @@ export const igraGcd = () => {
 export const igraProg = () => {
   console.log('What number is missing in the progression?');
   return igraLogic(0, brProg);
+};
+
+export const igraPrime = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
+  return igraLogic(0, brPrime);
 };
