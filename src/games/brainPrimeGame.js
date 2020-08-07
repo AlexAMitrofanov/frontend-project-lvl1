@@ -1,17 +1,12 @@
 import readlineSinc from 'readline-sync';
 
 const brPrime = () => {
-  let quest;
-  const number = Math.ceil(Math.random() * 100);
-  const half = Math.floor(number / 2);
+  const number = Math.floor(Math.random() * 100);
   let counter = 0;
-  if (number === 1) {
-    quest = 'no';
-  }
-  for (let i = half; i >= 0; i -= 1) {
+  for (let i = number; i >= 2; i -= 1) {
     counter = (number % i === 0) ? counter + 1 : counter;
   }
-  quest = (counter === 1) ? 'yes' : 'no';
+  const quest = (counter === 1) ? 'yes' : 'no';
 
   console.log(`Question: ${number}`);
 
