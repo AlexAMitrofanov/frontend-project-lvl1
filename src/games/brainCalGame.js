@@ -4,21 +4,20 @@ const brCalc = () => {
   let quest;
   const number = Math.floor(Math.random() * 100);
   const number1 = Math.floor(Math.random() * 10);
-  const det = Math.random();
+  const det = Math.floor(Math.random() * 3);
+  const str = '+-*';
 
-  if (det <= 1 / 3) {
+  if (det === 0) {
     quest = number + number1;
-    console.log(`Question: ${number} + ${number1}`);
   }
-  if (det > 1 / 3 && det <= 2 / 3) {
+  if (det === 1) {
     quest = number - number1;
-    console.log(`Question: ${number} - ${number1}`);
   }
-  if (det > 2 / 3) {
+  if (det === 2) {
     quest = number * number1;
-    console.log(`Question: ${number} * ${number1}`);
   }
-
+  const sign = str[det];
+  console.log(`Question: ${number} ${sign} ${number1}`);
   const answ = readlineSinc.question('Your answer: ');
 
   if (`${quest}` === answ) {
