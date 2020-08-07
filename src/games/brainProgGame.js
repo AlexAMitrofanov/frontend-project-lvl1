@@ -13,11 +13,13 @@ const brProg = () => {
       nextNumber += step;
       str += '.. ';
       quest = nextNumber;
+      i += 1;
+      if (i >= 9) {
+        break;
+      }
     }
-    if (i !== posElem) {
-      nextNumber += step;
-      str = `${str}${nextNumber} `;
-    }
+    nextNumber += step;
+    str = `${str}${nextNumber} `;
   }
   console.log(`Question: ${str}`);
 
