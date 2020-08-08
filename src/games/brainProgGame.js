@@ -2,24 +2,23 @@ import readlineSinc from 'readline-sync';
 
 const brProg = () => {
   let quest;
-  const number = Math.ceil(Math.random() * 100);
+  const number = Math.ceil(Math.random() * 10);
   const step = Math.ceil(Math.random() * 100);
   const posElem = Math.floor(Math.random() * 10);
 
   let nextNumber = number;
   let str = '';
   for (let i = 0; i < 10; i += 1) {
+    let nexElement;
     if (i === posElem) {
-      nextNumber += step;
-      str += '.. ';
+      nexElement = '.. ';
       quest = nextNumber;
-      i += 1;
-      if (i >= 9) {
-        break;
-      }
+    }
+    if (i !== posElem) {
+      nexElement = nextNumber;
     }
     nextNumber += step;
-    str = `${str}${nextNumber} `;
+    str = `${str}${nexElement} `;
   }
   console.log(`Question: ${str}`);
 
