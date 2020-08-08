@@ -12,11 +12,11 @@ const name = readlineSinc.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 
 const igraLogic = (b, f) => {
-  const r = f();
+  const returnFunc = f();
   if (b === 2) {
     return console.log(`Congratulations, ${name}!`);
   }
-  if (r === 'Correct!') {
+  if (returnFunc === 'Correct!') {
     console.log('Correct!');
     return igraLogic(b + 1, f);
   }
