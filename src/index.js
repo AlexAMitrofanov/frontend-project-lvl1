@@ -23,27 +23,27 @@ const igraLogic = (b, f) => {
   return console.log(`Let's try again, ${name}!`);
 };
 
-export const igraCalc = () => {
+export const gameCalc = () => {
   console.log('What is the result of the expression?');
   return igraLogic(0, brCalc);
 };
 
-export const igraEv = () => {
+export const gameEv = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   return igraLogic(0, brEv);
 };
 
-export const igraGcd = () => {
+export const gameGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
   return igraLogic(0, brGcd);
 };
 
-export const igraProg = () => {
+export const gameProg = () => {
   console.log('What number is missing in the progression?');
   return igraLogic(0, brProg);
 };
 
-export const igraPrime = () => {
+export const gamePrime = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
   return igraLogic(0, brPrime);
 };
