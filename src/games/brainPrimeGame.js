@@ -1,15 +1,17 @@
 import readlineSinc from 'readline-sync';
+import { number } from '../cli.js';
 
 const brPrime = () => {
-  const number = Math.floor(Math.random() * 100);
+  // const number = Math.floor(Math.random() * 100);
   let counter = 0;
-  for (let i = number; i >= 2; i -= 1) {
-    counter = (number % i === 0) ? counter + 1 : counter;
+  const roundNumber = number();
+  for (let i = roundNumber; i >= 2; i -= 1) {
+    counter = (roundNumber % i === 0) ? counter + 1 : counter;
   }
   const prime = 1;
   const quest = (counter === prime) ? 'yes' : 'no';
 
-  console.log(`Question: ${number}`);
+  console.log(`Question: ${roundNumber}`);
 
   const answ = readlineSinc.question('Your answer: ');
 
