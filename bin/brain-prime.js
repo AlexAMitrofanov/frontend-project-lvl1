@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { igraPrime } from '../src/index.js';
+import { gamePrime } from '../src/index.js';
 
-igraPrime();
+gamePrime();
