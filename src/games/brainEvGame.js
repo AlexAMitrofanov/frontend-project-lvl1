@@ -1,12 +1,13 @@
 import readlineSinc from 'readline-sync';
+import { number } from '../cli.js';
 
 const brEv = () => {
-  const number = Math.floor(Math.random() * 100);
-  console.log(`Question: ${number}`);
+  const roundNumber = number();
+  console.log(`Question: ${roundNumber}`);
   const answ = readlineSinc.question('Your answer: ');
-  const vopr = (number % 2 === 0) ? 'yes' : 'no';
+  const vopr = (roundNumber % 2 === 0) ? 'yes' : 'no';
 
-  if ((answ === 'yes' && number % 2 === 0) || (answ === 'no' && number % 2 !== 0)) {
+  if ((answ === 'yes' && roundNumber % 2 === 0) || (answ === 'no' && roundNumber % 2 !== 0)) {
     return 'Correct!';
   }
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${vopr}".`);
