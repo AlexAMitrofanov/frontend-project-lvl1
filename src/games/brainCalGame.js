@@ -1,8 +1,9 @@
 import readlineSinc from 'readline-sync';
+import { number } from '../cli.js';
 
 const brCalc = () => {
   let quest;
-  const number = Math.floor(Math.random() * 100);
+  const roundNumber = number();
   const number1 = Math.floor(Math.random() * 10);
   const determ = Math.floor(Math.random() * 3);
   const str = '+-*';
@@ -10,16 +11,16 @@ const brCalc = () => {
   const substaction = 1;
   const multiplication = 2;
   if (determ === addition) {
-    quest = number + number1;
+    quest = roundNumber + number1;
   }
   if (determ === substaction) {
-    quest = number - number1;
+    quest = roundNumber - number1;
   }
   if (determ === multiplication) {
-    quest = number * number1;
+    quest = roundNumber * number1;
   }
   const sign = str[determ];
-  console.log(`Question: ${number} ${sign} ${number1}`);
+  console.log(`Question: ${roundNumber} ${sign} ${number1}`);
   const answ = readlineSinc.question('Your answer: ');
 
   if (`${quest}` === answ) {
