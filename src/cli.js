@@ -1,5 +1,5 @@
 import readlineSinc from 'readline-sync';
 
-const name = () => readlineSinc.question('May I have your name? ');
+export const name = () => readlineSinc.question('May I have your name? ');
 
-export default name;
+export const number = () => Math.floor(Math.random() * 100);
