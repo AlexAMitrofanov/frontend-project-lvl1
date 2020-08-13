@@ -4,19 +4,21 @@ const brCalc = () => {
   let quest;
   const number = Math.floor(Math.random() * 100);
   const number1 = Math.floor(Math.random() * 10);
-  const det = Math.floor(Math.random() * 3);
+  const determ = Math.floor(Math.random() * 3);
   const str = '+-*';
-
-  if (det === 0) {
+  const addition = 0;
+  const substaction = 1;
+  const multiplication = 2;
+  if (determ === addition) {
     quest = number + number1;
   }
-  if (det === 1) {
+  if (determ === substaction) {
     quest = number - number1;
   }
-  if (det === 2) {
+  if (determ === multiplication) {
     quest = number * number1;
   }
-  const sign = str[det];
+  const sign = str[determ];
   console.log(`Question: ${number} ${sign} ${number1}`);
   const answ = readlineSinc.question('Your answer: ');
 
