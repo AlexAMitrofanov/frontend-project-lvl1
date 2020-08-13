@@ -6,7 +6,8 @@ const brPrime = () => {
   for (let i = number; i >= 2; i -= 1) {
     counter = (number % i === 0) ? counter + 1 : counter;
   }
-  const quest = (counter === 1) ? 'yes' : 'no';
+  const prime = 1;
+  const quest = (counter === prime) ? 'yes' : 'no';
 
   console.log(`Question: ${number}`);
 
