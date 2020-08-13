@@ -1,12 +1,13 @@
 import readlineSinc from 'readline-sync';
+import { number } from '../cli.js';
 
 const brProg = () => {
   let quest;
-  const number = Math.floor(Math.random() * 100);
+  const roundNumber = number();
   const step = Math.ceil(Math.random() * 100);
   const posElem = Math.floor(Math.random() * 10);
 
-  let nextNumber = number;
+  let nextNumber = roundNumber;
   let str = '';
   for (let i = 0; i < 10; i += 1) {
     let nexElement;
