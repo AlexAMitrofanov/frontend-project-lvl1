@@ -1,5 +1,6 @@
 import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
+import gameLogic from '../index.js';
 
 const brCalc = () => {
   let quest;
@@ -29,4 +30,9 @@ const brCalc = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-export default brCalc;
+const gameCalc = () => {
+  console.log('What is the result of the expression?');
+  return gameLogic(0, brCalc);
+};
+
+export default gameCalc;
