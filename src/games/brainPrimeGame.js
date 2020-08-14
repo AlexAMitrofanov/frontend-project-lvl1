@@ -1,5 +1,6 @@
 import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
+import gameLogic from '../index.js';
 
 const brPrime = () => {
   // const number = Math.floor(Math.random() * 100);
@@ -21,4 +22,9 @@ const brPrime = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-export default brPrime;
+const gamePrime = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
+  return gameLogic(0, brPrime);
+};
+
+export default gamePrime;
