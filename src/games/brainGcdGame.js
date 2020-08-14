@@ -1,5 +1,6 @@
 import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
+import gameLogic from '../index.js';
 
 const brGcd = () => {
   let quest;
@@ -25,4 +26,9 @@ const brGcd = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-export default brGcd;
+const gameGcd = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+  return gameLogic(0, brGcd);
+};
+
+export default gameGcd;
