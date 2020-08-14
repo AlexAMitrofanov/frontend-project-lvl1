@@ -1,5 +1,6 @@
 import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
+import gameLogic from '../index.js';
 
 const brProg = () => {
   let quest;
@@ -31,4 +32,9 @@ const brProg = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-export default brProg;
+const gameProg = () => {
+  console.log('What number is missing in the progression?');
+  return gameLogic(0, brProg);
+};
+
+export default gameProg;
