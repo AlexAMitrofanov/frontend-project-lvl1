@@ -1,5 +1,6 @@
 import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
+import gameLogic from '../index.js';
 
 const brEv = () => {
   const roundNumber = number();
@@ -13,4 +14,9 @@ const brEv = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${vopr}".`);
 };
 
-export default brEv;
+const gameEv = () => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  return gameLogic(0, brEv);
+};
+
+export default gameEv;
