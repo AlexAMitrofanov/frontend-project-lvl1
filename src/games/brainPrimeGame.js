@@ -22,9 +22,8 @@ const brPrime = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-const gamePrime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-  return gameLogic(0, brPrime);
-};
+const whatTodo = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+
+const gamePrime = () => gameLogic(brPrime, whatTodo);
 
 export default gamePrime;
