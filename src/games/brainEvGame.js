@@ -14,9 +14,8 @@ const brEv = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${vopr}".`);
 };
 
-const gameEv = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  return gameLogic(0, brEv);
-};
+const whatTodo = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const gameEv = () => gameLogic(brEv, whatTodo);
 
 export default gameEv;
