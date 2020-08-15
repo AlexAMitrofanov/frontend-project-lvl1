@@ -9,10 +9,10 @@ const gameLogic = (f, toDo) => {
 
   console.log(toDo);
   const iter = (b, func) => {
-    const returnFunc = f();
-    if (b === 2) {
+    if (b > 2) {
       return console.log(`Congratulations, ${name}!`);
     }
+    const returnFunc = f();
     if (returnFunc === 'Correct!') {
       console.log('Correct!');
       return iter(b + 1, func);
