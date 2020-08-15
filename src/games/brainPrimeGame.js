@@ -3,7 +3,6 @@ import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
 const brPrime = () => {
-  // const number = Math.floor(Math.random() * 100);
   let counter = 0;
   const roundNumber = number();
   for (let i = roundNumber; i >= 2; i -= 1) {
