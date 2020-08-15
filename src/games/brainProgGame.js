@@ -32,9 +32,8 @@ const brProg = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-const gameProg = () => {
-  console.log('What number is missing in the progression?');
-  return gameLogic(0, brProg);
-};
+const whatTodo = 'What number is missing in the progression?';
+
+const gameProg = () => gameLogic(brProg, whatTodo);
 
 export default gameProg;
