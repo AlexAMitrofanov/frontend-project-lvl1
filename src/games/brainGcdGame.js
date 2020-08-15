@@ -26,9 +26,8 @@ const brGcd = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-const gameGcd = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  return gameLogic(0, brGcd);
-};
+const whatTodo = 'Find the greatest common divisor of given numbers.';
+
+const gameGcd = () => gameLogic(brGcd, whatTodo);
 
 export default gameGcd;
