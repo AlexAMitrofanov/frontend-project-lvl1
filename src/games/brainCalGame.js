@@ -30,9 +30,8 @@ const brCalc = () => {
   return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
 };
 
-const gameCalc = () => {
-  console.log('What is the result of the expression?');
-  return gameLogic(0, brCalc);
-};
+const whatTodo = 'What is the result of the expression?';
+
+const gameCalc = () => gameLogic(brCalc, whatTodo);
 
 export default gameCalc;
