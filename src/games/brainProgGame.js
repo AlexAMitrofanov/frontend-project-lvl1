@@ -18,23 +18,22 @@ const strProg = () => {
     nextNumber += step;
     string = `${string}${nexElement} `;
   }
-  return string;
+  const result = string.substring(0, (string.length - 1));
+  return result;
 };
 
 const question = () => `Question:  ${strProg()}`;
 const brProg = (str) => {
   const mass = str.split(' ');
-  let element;
   let posElement;
   for (let i = 0; i < mass.length; i += 1) {
     if (mass[i] === '..') {
       posElement = i;
     }
   }
-  if (posElement >= 9) {
-    element = (mass[posElement - 1] - mass[posElement - 2]) + mass[posElement - 1];
-  }
-  element = mass[posElement + 1] - (mass[posElement + 2] - mass[posElement + 1]);
+  const element = (posElement >= (mass.length - 2))
+    ? +mass[posElement - 1] + (+mass[posElement - 1] - (+mass[posElement - 2]))
+    : +mass[posElement + 1] - (+mass[posElement + 2] - (+mass[posElement + 1]));
   return `${element}`;
 };
 
