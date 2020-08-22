@@ -22,9 +22,9 @@ const strProg = () => {
   return result;
 };
 
-const question = () => `Question:  ${strProg()}`;
-const brProg = (str) => {
-  const mass = str.split(' ');
+const question = () => `Question: ${strProg()}`;
+
+const brProg = (mass) => {
   let posElement;
   for (let i = 0; i < mass.length; i += 1) {
     if (mass[i] === '..') {
