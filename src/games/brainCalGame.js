@@ -13,22 +13,22 @@ const sign = () => {
   }
   return '*';
 };
-const question = () => `Question:  ${number()} ${sign()} ${number()}`;
+const question = () => `Question: ${number()} ${sign()} ${number()}`;
 
-const brCalc = (str) => {
+const brCalc = (mass) => {
   let quest;
-  const mass = str.split(' ');
+  // const mass = str.split(' ');
 
-  const num1 = +mass[0];
-  const num2 = +mass[2];
+  const num1 = +mass[1];
+  const num2 = +mass[3];
 
-  if (mass[1] === '+') {
+  if (mass[2] === '+') {
     quest = num1 + num2;
   }
-  if (mass[1] === '-') {
+  if (mass[2] === '-') {
     quest = num1 - num2;
   }
-  if (mass[1] === '*') {
+  if (mass[2] === '*') {
     quest = num1 * num2;
   }
   return `${quest}`;
