@@ -1,21 +1,21 @@
-import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const brEv = () => {
-  const roundNumber = number();
-  console.log(`Question: ${roundNumber}`);
-  const answ = readlineSinc.question('Your answer: ');
-  const vopr = (roundNumber % 2 === 0) ? 'yes' : 'no';
+const question = () => `Question:  ${number()}`;
 
-  if ((answ === 'yes' && roundNumber % 2 === 0) || (answ === 'no' && roundNumber % 2 !== 0)) {
-    return 'Correct!';
+const brEv = (str) => {
+  const num = +str;
+  if (num === 0) {
+    return 'no';
   }
-  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${vopr}".`);
+  if (num % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
 };
 
 const whatTodo = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEv = () => gameLogic(brEv, whatTodo);
+const gameEv = () => gameLogic(brEv, whatTodo, question);
 
 export default gameEv;
