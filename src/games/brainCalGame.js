@@ -17,7 +17,6 @@ const question = () => `Question: ${number()} ${sign()} ${number()}`;
 
 const brCalc = (mass) => {
   let quest;
-  // const mass = str.split(' ');
 
   const num1 = +mass[1];
   const num2 = +mass[3];
