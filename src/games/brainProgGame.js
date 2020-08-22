@@ -1,39 +1,45 @@
-import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const brProg = () => {
-  let quest;
+const strProg = () => {
   const roundNumber = number();
   const step = Math.ceil(Math.random() * 100);
   const posElem = Math.floor(Math.random() * 10);
-
   let nextNumber = roundNumber;
-  let str = '';
+  let string = '';
   for (let i = 0; i < 10; i += 1) {
     let nexElement;
     if (i === posElem) {
       nexElement = '..';
-      quest = nextNumber;
     }
     if (i !== posElem) {
       nexElement = nextNumber;
     }
     nextNumber += step;
-    str = `${str}${nexElement} `;
+    string = `${string}${nexElement} `;
   }
-  console.log(`Question: ${str}`);
+  return string;
+};
 
-  const answ = readlineSinc.question('Your answer: ');
-
-  if (`${quest}` === answ) {
-    return 'Correct!';
+const question = () => `Question:  ${strProg()}`;
+const brProg = (str) => {
+  const mass = str.split(' ');
+  let element;
+  let posElement;
+  for (let i = 0; i < mass.length; i += 1) {
+    if (mass[i] === '..') {
+      posElement = i;
+    }
   }
-  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
+  if (posElement >= 9) {
+    element = (mass[posElement - 1] - mass[posElement - 2]) + mass[posElement - 1];
+  }
+  element = mass[posElement + 1] - (mass[posElement + 2] - mass[posElement + 1]);
+  return `${element}`;
 };
 
 const whatTodo = 'What number is missing in the progression?';
 
-const gameProg = () => gameLogic(brProg, whatTodo);
+const gameProg = () => gameLogic(brProg, whatTodo, question);
 
 export default gameProg;
