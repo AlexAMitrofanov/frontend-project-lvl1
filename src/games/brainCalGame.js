@@ -1,37 +1,41 @@
-import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const brCalc = () => {
-  let quest;
-  const roundNumber = number();
-  const number1 = Math.floor(Math.random() * 10);
+const sign = () => {
   const determ = Math.floor(Math.random() * 3);
-  const str = '+-*';
   const addition = 0;
   const substaction = 1;
-  const multiplication = 2;
   if (determ === addition) {
-    quest = roundNumber + number1;
+    return '+';
   }
   if (determ === substaction) {
-    quest = roundNumber - number1;
+    return '-';
   }
-  if (determ === multiplication) {
-    quest = roundNumber * number1;
-  }
-  const sign = str[determ];
-  console.log(`Question: ${roundNumber} ${sign} ${number1}`);
-  const answ = readlineSinc.question('Your answer: ');
+  return '*';
+};
+const question = () => `Question:  ${number()} ${sign()} ${number()}`;
 
-  if (`${quest}` === answ) {
-    return 'Correct!';
+const brCalc = (str) => {
+  let quest;
+  const mass = str.split(' ');
+
+  const num1 = +mass[0];
+  const num2 = +mass[2];
+
+  if (mass[1] === '+') {
+    quest = num1 + num2;
   }
-  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
+  if (mass[1] === '-') {
+    quest = num1 - num2;
+  }
+  if (mass[1] === '*') {
+    quest = num1 * num2;
+  }
+  return `${quest}`;
 };
 
 const whatTodo = 'What is the result of the expression?';
 
-const gameCalc = () => gameLogic(brCalc, whatTodo);
+const gameCalc = () => gameLogic(brCalc, whatTodo, question);
 
 export default gameCalc;
