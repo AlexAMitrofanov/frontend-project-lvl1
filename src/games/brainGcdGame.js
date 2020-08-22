@@ -1,33 +1,29 @@
-import readlineSinc from 'readline-sync';
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const brGcd = () => {
+const question = () => `Question:  ${number()} ${number()}`;
+
+const brGcd = (str) => {
+  const mass = str.split(' ');
+  const num = mass[0];
+  const num1 = mass[1];
   let quest;
-  const roundNumber = number();
-  const roundNumber1 = number();
-  console.log(`Question: ${roundNumber} ${roundNumber1}`);
-  let a;
-  let b;
-  for (let i = roundNumber1; i > 0; i -= 1) {
-    a = roundNumber % i;
-    b = roundNumber1 % i;
-    if (a === 0 && b === 0) {
+
+  let devider1;
+  let devider2;
+  for (let i = num; i > 0; i -= 1) {
+    devider1 = num % i;
+    devider2 = num1 % i;
+    if (devider1 === 0 && devider2 === 0) {
       quest = i;
       break;
     }
   }
-
-  const answ = readlineSinc.question('Your answer: ');
-
-  if (`${quest}` === answ) {
-    return 'Correct!';
-  }
-  return console.log(`"${answ}" is the wrong answer ;(. Correct answer was "${quest}".`);
+  return `${quest}`;
 };
 
 const whatTodo = 'Find the greatest common divisor of given numbers.';
 
-const gameGcd = () => gameLogic(brGcd, whatTodo);
+const gameGcd = () => gameLogic(brGcd, whatTodo, question);
 
 export default gameGcd;
