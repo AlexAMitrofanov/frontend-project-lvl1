@@ -1,12 +1,13 @@
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const question = () => `Question:  ${number()}`;
+const question = () => `Question: ${number()}`;
 
-const brPrime = (a) => {
+const brPrime = (mass) => {
+  const num = +mass[1];
   let counter = 0;
-  for (let i = a; i >= 2; i -= 1) {
-    counter = (a % i === 0) ? counter + 1 : counter;
+  for (let i = num; i >= 2; i -= 1) {
+    counter = (num % i === 0) ? counter + 1 : counter;
   }
   if (counter === 1) {
     return 'yes';
