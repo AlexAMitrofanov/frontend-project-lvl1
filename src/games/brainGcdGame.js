@@ -1,12 +1,11 @@
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const question = () => `Question:  ${number()} ${number()}`;
+const question = () => `Question: ${number()} ${number()}`;
 
-const brGcd = (str) => {
-  const mass = str.split(' ');
-  const num = mass[0];
-  const num1 = mass[1];
+const brGcd = (mass) => {
+  const num = mass[1];
+  const num1 = mass[2];
   let quest;
 
   let devider1;
