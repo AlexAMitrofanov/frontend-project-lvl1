@@ -1,10 +1,10 @@
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const question = () => `Question:  ${number()}`;
+const question = () => `Question: ${number()}`;
 
-const brEv = (str) => {
-  const num = +str;
+const brEv = (mass) => {
+  const num = +mass[1];
   if (num === 0) {
     return 'no';
   }
