@@ -14,7 +14,7 @@ const gameLogic = (f, toDo, question) => {
     }
     const question1 = question();
     console.log(question1);
-    const roundQuestion = question1.split('  ')[1];
+    const roundQuestion = question1.split(' ');
     const returnFunc = f(roundQuestion);
     const playersAnsw = readlineSinc.question('Your answer: ');
     if (returnFunc === playersAnsw) {
