@@ -1,7 +1,10 @@
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const question = () => `Question: ${number()} ${number()}`;
+const firstNum = () => number() + 1;
+const secondNum = () => number() + 1;
+
+const question = () => `Question: ${firstNum()} ${secondNum()}`;
 
 const brGcd = (mass) => {
   const num = mass[1];
