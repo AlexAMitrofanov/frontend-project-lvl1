@@ -1,7 +1,7 @@
 import { number } from '../cli.js';
 import gameLogic from '../index.js';
 
-const question = () => `Question: ${number()}`;
+const question = () => `${number()}`;
 
 const brEv = (mass) => {
   const num = +mass[1];
