@@ -12,7 +12,7 @@ const gameLogic = (f, toDo, question) => {
     if (b > 2) {
       return console.log(`Congratulations, ${name}!`);
     }
-    const question1 = question();
+    const question1 = `Question: ${question()}`;
     console.log(question1);
     const roundQuestion = question1.split(' ');
     const returnFunc = f(roundQuestion);
