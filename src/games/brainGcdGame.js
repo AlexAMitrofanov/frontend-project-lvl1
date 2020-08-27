@@ -4,7 +4,7 @@ import gameLogic from '../index.js';
 const firstNum = () => number() + 1;
 const secondNum = () => number() + 1;
 
-const question = () => `Question: ${firstNum()} ${secondNum()}`;
+const question = () => `${firstNum()} ${secondNum()}`;
 
 const brGcd = (mass) => {
   const num = mass[1];
