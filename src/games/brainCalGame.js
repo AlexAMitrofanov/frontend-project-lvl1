@@ -30,7 +30,7 @@ const brCalc = (mass) => {
   if (mass[2] === '*') {
     quest = num1 * num2;
   }
-  return `${quest}`;
+  return quest;
 };
 
 const whatTodo = 'What is the result of the expression?';
