@@ -21,7 +21,7 @@ const brGcd = (mass) => {
       break;
     }
   }
-  return `${quest}`;
+  return quest;
 };
 
 const whatTodo = 'Find the greatest common divisor of given numbers.';
