@@ -7,7 +7,8 @@ const strProg = () => {
   const posElem = Math.floor(Math.random() * 10);
   let nextNumber = roundNumber;
   let string = '';
-  for (let i = 0; i < 10; i += 1) {
+  const stringLength = 10;
+  for (let i = 0; i < stringLength; i += 1) {
     let nexElement;
     if (i === posElem) {
       nexElement = '..';
@@ -34,7 +35,7 @@ const brProg = (mass) => {
   const element = (posElement >= (mass.length - 2))
     ? +mass[posElement - 1] + (+mass[posElement - 1] - (+mass[posElement - 2]))
     : +mass[posElement + 1] - (+mass[posElement + 2] - (+mass[posElement + 1]));
-  return `${element}`;
+  return element;
 };
 
 const whatTodo = 'What number is missing in the progression?';
