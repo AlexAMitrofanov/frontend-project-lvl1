@@ -22,7 +22,7 @@ const strProg = () => {
   return result;
 };
 
-const question = () => `Question: ${strProg()}`;
+const question = () => `${strProg()}`;
 
 const brProg = (mass) => {
   let posElement;
