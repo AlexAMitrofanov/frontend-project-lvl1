@@ -13,7 +13,7 @@ const sign = () => {
   }
   return '*';
 };
-const question = () => `Question: ${number()} ${sign()} ${number()}`;
+const question = () => `${number()} ${sign()} ${number()}`;
 
 const brCalc = (mass) => {
   let quest;
