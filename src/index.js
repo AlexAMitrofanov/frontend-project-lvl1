@@ -12,19 +12,18 @@ const gameLogic = (f, toDo, question) => {
     if (b > 2) {
       return console.log(`Congratulations, ${name}!`);
     }
-    const question1 = `Question: ${question()}`;
+    const subQuestion = question();
+    const question1 = `Question: ${subQuestion}`;
     console.log(question1);
-    const roundQuestion = question1.split(' ');
+    const roundQuestion = subQuestion.split(' ');
     const returnFunc = f(roundQuestion);
     const playersAnsw = readlineSinc.question('Your answer: ');
     if (`${returnFunc}` === playersAnsw) {
       console.log('Correct!');
       return iter(b + 1, func);
     }
-    const wrongAnswer = console.log(`
-      "${playersAnsw}" is the wrong answer ;(. Correct answer was "${returnFunc}".
-      Let's try again, ${name}!
-    `);
+    const wrongAnswer = console.log(`"${playersAnsw}" is the wrong answer ;(. Correct answer was "${returnFunc}".
+Let's try again, ${name}!`);
     return wrongAnswer;
   };
 
