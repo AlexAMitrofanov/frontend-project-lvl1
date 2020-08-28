@@ -3,11 +3,11 @@ import gameLogic from '../index.js';
 
 const strProg = () => {
   const roundNumber = number();
+  const stringLength = 10;
   const step = Math.ceil(Math.random() * 100);
-  const posElem = Math.floor(Math.random() * 10);
+  const posElem = Math.floor(Math.random() * stringLength);
   let nextNumber = roundNumber;
   let string = '';
-  const stringLength = 10;
   for (let i = 0; i < stringLength; i += 1) {
     let nexElement;
     if (i === posElem) {
