@@ -7,8 +7,8 @@ const secondNum = () => number() + 1;
 const question = () => `${firstNum()} ${secondNum()}`;
 
 const brGcd = (mass) => {
-  const num = mass[1];
-  const num1 = mass[2];
+  const num = mass[0];
+  const num1 = mass[1];
   let quest;
 
   let devider1;
