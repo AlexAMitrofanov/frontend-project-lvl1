@@ -4,7 +4,7 @@ import gameLogic from '../index.js';
 const question = () => `${number()}`;
 
 const brPrime = (mass) => {
-  const num = +mass[1];
+  const num = +mass[0];
   let counter = 0;
   for (let i = num; i >= 2; i -= 1) {
     counter = (num % i === 0) ? counter + 1 : counter;
