@@ -1,18 +1,17 @@
 import { number } from '../cli.js';
-import gameLogic from '../index.js';
-
-const question = () => `${number()}`;
+import playGame from '../index.js';
 
 const isEven = (a) => (a % 2 === 0);
 
-const brEv = (mass) => {
-  const num = +mass[0];
-  const result = (isEven(num)) ? 'yes' : 'no';
+const getAnswAndQuest = () => {
+  const question = number();
+  const answer = (isEven(question)) ? 'yes' : 'no';
+  const result = [answer, question];
   return result;
 };
 
-const whatTodo = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEv = () => gameLogic(brEv, whatTodo, question);
+const gameEven = () => playGame(getAnswAndQuest, description);
 
-export default gameEv;
+export default gameEven;
