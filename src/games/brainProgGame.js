@@ -1,19 +1,19 @@
 import { number } from '../cli.js';
-import gameLogic from '../index.js';
+import playGame from '../index.js';
 
-const strProg = () => {
+const getProgression = () => {
   const roundNumber = number();
   const stringLength = 10;
   const step = Math.ceil(Math.random() * 100);
-  const posElem = Math.floor(Math.random() * stringLength);
+  const elementsPosition = Math.floor(Math.random() * stringLength);
   let nextNumber = roundNumber;
   let string = '';
   for (let i = 0; i < stringLength; i += 1) {
     let nexElement;
-    if (i === posElem) {
+    if (i === elementsPosition) {
       nexElement = '..';
     }
-    if (i !== posElem) {
+    if (i !== elementsPosition) {
       nexElement = nextNumber;
     }
     nextNumber += step;
@@ -23,23 +23,30 @@ const strProg = () => {
   return result;
 };
 
-const question = () => `${strProg()}`;
-
-const brProg = (mass) => {
-  let posElement;
+const getRequiredElement = (mass) => {
+  let position;
   for (let i = 0; i < mass.length; i += 1) {
     if (mass[i] === '..') {
-      posElement = i;
+      position = i;
     }
   }
-  const element = (posElement >= (mass.length - 2))
-    ? +mass[posElement - 1] + (+mass[posElement - 1] - (+mass[posElement - 2]))
-    : +mass[posElement + 1] - (+mass[posElement + 2] - (+mass[posElement + 1]));
+  const element = (position >= (mass.length - 2))
+    ? +mass[position - 1] + (+mass[position - 1] - (+mass[position - 2]))
+    : +mass[position + 1] - (+mass[position + 2] - (+mass[position + 1]));
   return element;
 };
 
-const whatTodo = 'What number is missing in the progression?';
+const getAnswAndQuest = () => {
+  const question = () => `${getProgression()}`;
+  const questionForPlayer = question();
+  const questionForTransmission = questionForPlayer.split(' ');
+  const answer = getRequiredElement(questionForTransmission);
+  const result = [answer, questionForPlayer];
+  return result;
+};
 
-const gameProg = () => gameLogic(brProg, whatTodo, question);
+const description = 'What number is missing in the progression?';
+
+const gameProg = () => playGame(getAnswAndQuest, description);
 
 export default gameProg;
