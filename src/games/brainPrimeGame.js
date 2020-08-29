@@ -1,22 +1,26 @@
 import { number } from '../cli.js';
-import gameLogic from '../index.js';
+import playGame from '../index.js';
 
-const question = () => `${number()}`;
-
-const brPrime = (mass) => {
-  const num = +mass[0];
+const isPrime = (a) => {
   let counter = 0;
-  for (let i = num; i >= 2; i -= 1) {
-    counter = (num % i === 0) ? counter + 1 : counter;
+  for (let i = a; i >= 2; i -= 1) {
+    counter = (a % i === 0) ? counter + 1 : counter;
   }
   if (counter === 1) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
-const whatTodo = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+const getAnswAndQuest = () => {
+  const question = number();
+  const answer = isPrime(question) ? 'yes' : 'no';
+  const result = [answer, question];
+  return result;
+};
 
-const gamePrime = () => gameLogic(brPrime, whatTodo, question);
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+
+const gamePrime = () => playGame(getAnswAndQuest, description);
 
 export default gamePrime;
