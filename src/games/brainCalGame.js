@@ -1,41 +1,48 @@
 import { number } from '../cli.js';
-import gameLogic from '../index.js';
+import playGame from '../index.js';
 
-const sign = () => {
+const getSign = () => {
   const operators = '+-*';
-  const determ = Math.floor(Math.random() * operators.length);
+  const determinator = Math.floor(Math.random() * operators.length);
   const addition = 0;
   const substaction = 1;
-  if (determ === addition) {
+  if (determinator === addition) {
     return operators[0];
   }
-  if (determ === substaction) {
+  if (determinator === substaction) {
     return operators[1];
   }
   return operators[2];
 };
-const question = () => `${number()} ${sign()} ${number()}`;
 
-const brCalc = (mass) => {
-  let quest;
-
+const calculate = (mass) => {
+  let result;
   const num1 = +mass[0];
   const num2 = +mass[2];
 
   if (mass[1] === '+') {
-    quest = num1 + num2;
+    result = num1 + num2;
   }
   if (mass[1] === '-') {
-    quest = num1 - num2;
+    result = num1 - num2;
   }
   if (mass[1] === '*') {
-    quest = num1 * num2;
+    result = num1 * num2;
   }
-  return quest;
+  return result;
 };
 
-const whatTodo = 'What is the result of the expression?';
+const getAnswAndQuest = () => {
+  const question = () => `${number()} ${getSign()} ${number()}`;
+  const questionForPlayer = question();
+  const questionForTransmission = questionForPlayer.split(' ');
+  const answer = calculate(questionForTransmission);
+  const result = [answer, questionForPlayer];
+  return result;
+};
 
-const gameCalc = () => gameLogic(brCalc, whatTodo, question);
+const description = 'What is the result of the expression?';
+
+const gameCalc = () => playGame(getAnswAndQuest, description);
 
 export default gameCalc;
