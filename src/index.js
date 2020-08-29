@@ -1,33 +1,33 @@
 import readlineSinc from 'readline-sync';
 
-const gameLogic = (f, toDo, question) => {
+const playGame = (gameFunction, action) => {
   console.log('Welcome to the Brain Games');
 
   const name = readlineSinc.question('May I have your name? ');
 
   console.log(`Hello, ${name}!`);
 
-  console.log(toDo);
-  const iter = (b, func) => {
-    if (b > 2) {
+  console.log(action);
+  const iter = (iteration, func) => {
+    if (iteration > 2) {
       return console.log(`Congratulations, ${name}!`);
     }
-    const subQuestion = question();
-    const question1 = `Question: ${subQuestion}`;
-    console.log(question1);
-    const roundQuestion = subQuestion.split(' ');
-    const returnFunc = f(roundQuestion);
+    const answerAndQuestion = func();
+    const subQuestion = answerAndQuestion[1];
+    const question = `Question: ${subQuestion}`;
+    console.log(question);
     const playersAnsw = readlineSinc.question('Your answer: ');
-    if (`${returnFunc}` === playersAnsw) {
+    const programsAnswer = `${answerAndQuestion[0]}`;
+    if (programsAnswer === playersAnsw) {
       console.log('Correct!');
-      return iter(b + 1, func);
+      return iter(iteration + 1, func);
     }
-    const wrongAnswer = console.log(`"${playersAnsw}" is the wrong answer ;(. Correct answer was "${returnFunc}".
+    const wrongAnswer = console.log(`"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".
 Let's try again, ${name}!`);
     return wrongAnswer;
   };
 
-  return iter(0, f);
+  return iter(0, gameFunction);
 };
 
-export default gameLogic;
+export default playGame;
