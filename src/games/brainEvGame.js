@@ -1,17 +1,12 @@
-import { number } from '../cli.js';
+import { getAnswAndQuest } from '../cli.js';
 import playGame from '../index.js';
 
 const isEven = (a) => (a % 2 === 0);
 
-const getAnswAndQuest = () => {
-  const question = number();
-  const answer = (isEven(question)) ? 'yes' : 'no';
-  const result = [answer, question];
-  return result;
-};
+const playEven = () => getAnswAndQuest(isEven);
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEven = () => playGame(getAnswAndQuest, description);
+const gameEven = () => playGame(playEven, description);
 
 export default gameEven;
