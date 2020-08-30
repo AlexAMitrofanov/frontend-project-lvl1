@@ -1,4 +1,4 @@
-import { number } from '../cli.js';
+import { getAnswAndQuest } from '../cli.js';
 import playGame from '../index.js';
 
 const isPrime = (a) => {
@@ -12,15 +12,10 @@ const isPrime = (a) => {
   return false;
 };
 
-const getAnswAndQuest = () => {
-  const question = number();
-  const answer = isPrime(question) ? 'yes' : 'no';
-  const result = [answer, question];
-  return result;
-};
+const pleyPrime = () => getAnswAndQuest(isPrime);
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const gamePrime = () => playGame(getAnswAndQuest, description);
+const gamePrime = () => playGame(pleyPrime, description);
 
 export default gamePrime;
