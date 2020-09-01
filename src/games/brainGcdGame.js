@@ -1,4 +1,4 @@
-import { number } from '../cli.js';
+import { getNumber } from '../cli.js';
 import playGame from '../index.js';
 
 const getDivisor = (a, b) => {
@@ -17,7 +17,7 @@ const getDivisor = (a, b) => {
 };
 
 const getAnswAndQuest = () => {
-  const num = () => number() + 1;
+  const num = () => getNumber() + 1;
   const firstNum = num();
   const secondNum = num();
   const question = `${firstNum} ${secondNum}`;
