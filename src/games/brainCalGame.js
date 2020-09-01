@@ -1,18 +1,11 @@
-import { number } from '../cli.js';
+import { getNumber, getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const getSign = () => {
   const operators = '+-*';
-  const determinator = Math.floor(Math.random() * operators.length);
-  const addition = 0;
-  const substaction = 1;
-  if (determinator === addition) {
-    return operators[0];
-  }
-  if (determinator === substaction) {
-    return operators[1];
-  }
-  return operators[2];
+  const determinator = getNumberFromGap(operators.length);
+  const result = operators[determinator];
+  return result;
 };
 
 const calculate = (mass) => {
@@ -33,7 +26,7 @@ const calculate = (mass) => {
 };
 
 const getAnswAndQuest = () => {
-  const question = () => `${number()} ${getSign()} ${number()}`;
+  const question = () => `${getNumber()} ${getSign()} ${getNumber()}`;
   const questionForPlayer = question();
   const questionForTransmission = questionForPlayer.split(' ');
   const answer = calculate(questionForTransmission);
