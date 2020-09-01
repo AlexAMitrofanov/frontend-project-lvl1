@@ -1,52 +1,27 @@
 import { number } from '../cli.js';
 import playGame from '../index.js';
 
-const getProgression = () => {
+const getProgressionAndNumber = () => {
   const roundNumber = number();
   const stringLength = 10;
   const step = Math.ceil(Math.random() * 100);
   const elementsPosition = Math.floor(Math.random() * stringLength);
-  let nextNumber = roundNumber;
+  let searchedNumber;
   let string = '';
   for (let i = 0; i < stringLength; i += 1) {
-    let nexElement;
-    if (i === elementsPosition) {
-      nexElement = '..';
+    const nextElement = (i === elementsPosition) ? '..' : roundNumber + (i * step);
+    if (nextElement === '..') {
+      searchedNumber = roundNumber + (i * step);
     }
-    if (i !== elementsPosition) {
-      nexElement = nextNumber;
-    }
-    nextNumber += step;
-    string = `${string}${nexElement} `;
+    string = `${string}${nextElement} `;
   }
-  const result = string.substring(0, (string.length - 1));
-  return result;
-};
-
-const getRequiredElement = (mass) => {
-  let position;
-  for (let i = 0; i < mass.length; i += 1) {
-    if (mass[i] === '..') {
-      position = i;
-    }
-  }
-  const element = (position >= (mass.length - 2))
-    ? +mass[position - 1] + (+mass[position - 1] - (+mass[position - 2]))
-    : +mass[position + 1] - (+mass[position + 2] - (+mass[position + 1]));
-  return element;
-};
-
-const getAnswAndQuest = () => {
-  const question = () => `${getProgression()}`;
-  const questionForPlayer = question();
-  const questionForTransmission = questionForPlayer.split(' ');
-  const answer = getRequiredElement(questionForTransmission);
-  const result = [answer, questionForPlayer];
+  const progression = [string.substring(0, (string.length - 1))];
+  const result = [searchedNumber, progression];
   return result;
 };
 
 const description = 'What number is missing in the progression?';
 
-const gameProg = () => playGame(getAnswAndQuest, description);
+const gameProg = () => playGame(getProgressionAndNumber, description);
 
 export default gameProg;
