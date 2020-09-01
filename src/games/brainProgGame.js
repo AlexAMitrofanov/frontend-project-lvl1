@@ -1,11 +1,11 @@
-import { number } from '../cli.js';
+import { getNumber, getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const getProgressionAndNumber = () => {
-  const roundNumber = number();
+  const roundNumber = getNumber();
   const stringLength = 10;
   const step = Math.ceil(Math.random() * 100);
-  const elementsPosition = Math.floor(Math.random() * stringLength);
+  const elementsPosition = getNumberFromGap(stringLength);
   let searchedNumber;
   let string = '';
   for (let i = 0; i < stringLength; i += 1) {
