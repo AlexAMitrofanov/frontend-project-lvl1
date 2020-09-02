@@ -1,4 +1,4 @@
-import { getNumber, getNumberFromGap } from '../cli.js';
+import { getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const getSign = () => {
@@ -24,8 +24,9 @@ const calculate = (a, b, sign) => {
 };
 
 const getAnswAndQuest = () => {
-  const firstNumber = getNumber();
-  const secondNumber = getNumber();
+  const gapForNumbers = 100;
+  const firstNumber = getNumberFromGap(gapForNumbers);
+  const secondNumber = getNumberFromGap(gapForNumbers);
   const sign = getSign();
   const questionForPlayer = `${firstNumber} ${sign} ${secondNumber}`;
   const answer = calculate(firstNumber, secondNumber, sign);
