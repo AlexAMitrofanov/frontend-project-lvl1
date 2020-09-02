@@ -1,4 +1,4 @@
-import { getAnswAndQuest } from '../cli.js';
+import { getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const isPrime = (a) => {
@@ -15,10 +15,16 @@ const isPrime = (a) => {
   return true;
 };
 
-const pleyPrime = () => getAnswAndQuest(isPrime);
+const getAnswAndQuest = () => {
+  const gapForNumber = 100;
+  const question = getNumberFromGap(gapForNumber);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  const result = [answer, question];
+  return result;
+};
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const gamePrime = () => playGame(pleyPrime, description);
+const playPrime = () => playGame(getAnswAndQuest, description);
 
-export default gamePrime;
+export default playPrime;
