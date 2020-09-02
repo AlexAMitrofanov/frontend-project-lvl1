@@ -1,4 +1,4 @@
-import { getNumber } from '../cli.js';
+import { getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const getDivisor = (a, b) => {
@@ -17,9 +17,10 @@ const getDivisor = (a, b) => {
 };
 
 const getAnswAndQuest = () => {
-  const num = () => getNumber() + 1;
-  const firstNum = num();
-  const secondNum = num();
+  const numberNotZero = 1;
+  const gapForNumbers = 100;
+  const firstNum = getNumberFromGap(gapForNumbers) + numberNotZero;
+  const secondNum = getNumberFromGap(gapForNumbers) + numberNotZero;
   const question = `${firstNum} ${secondNum}`;
   const answer = getDivisor(firstNum, secondNum);
   const result = [answer, question];
@@ -28,6 +29,6 @@ const getAnswAndQuest = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gameGcd = () => playGame(getAnswAndQuest, description);
+const playGcd = () => playGame(getAnswAndQuest, description);
 
-export default gameGcd;
+export default playGcd;
