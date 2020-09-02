@@ -1,10 +1,12 @@
-import { getNumber, getNumberFromGap } from '../cli.js';
+import { getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const getProgressionAndNumber = () => {
-  const roundNumber = getNumber();
+  const gapForNumAndStep = 100;
+  const stepNotZero = 1;
+  const roundNumber = getNumberFromGap(gapForNumAndStep);
   const stringLength = 10;
-  const step = Math.ceil(Math.random() * 100);
+  const step = getNumberFromGap(gapForNumAndStep) + stepNotZero;
   const elementsPosition = getNumberFromGap(stringLength);
   let searchedNumber;
   let string = '';
@@ -22,6 +24,6 @@ const getProgressionAndNumber = () => {
 
 const description = 'What number is missing in the progression?';
 
-const gameProg = () => playGame(getProgressionAndNumber, description);
+const playProg = () => playGame(getProgressionAndNumber, description);
 
-export default gameProg;
+export default playProg;
