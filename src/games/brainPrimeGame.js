@@ -2,13 +2,11 @@ import { getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const isPrime = (a) => {
-  if (a === 0) {
+  if (a < 2) {
     return false;
   }
-  let counter = 0;
   for (let i = Math.floor(a / 2); i >= 2; i -= 1) {
-    counter = (a % i === 0) ? counter + 1 : counter;
-    if (counter > 0) {
+    if (a % i === 0) {
       return false;
     }
   }
