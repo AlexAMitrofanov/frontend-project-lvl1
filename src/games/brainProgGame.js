@@ -3,10 +3,10 @@ import playGame from '../index.js';
 
 const getProgressionAndNumber = () => {
   const gapForNumAndStep = 100;
-  const stepNotZero = 1;
+  const stepMoreThanZero = 1;
   const roundNumber = getNumberFromGap(gapForNumAndStep);
   const stringLength = 10;
-  const step = getNumberFromGap(gapForNumAndStep) + stepNotZero;
+  const step = getNumberFromGap(gapForNumAndStep) + stepMoreThanZero;
   const elementsPosition = getNumberFromGap(stringLength);
   let searchedNumber;
   let string = '';
