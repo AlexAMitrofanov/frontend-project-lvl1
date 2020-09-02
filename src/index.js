@@ -10,7 +10,8 @@ const playGame = (gameFunction, action) => {
   console.log(action);
   const iter = (iteration, func) => {
     if (iteration > 2) {
-      return console.log(`Congratulations, ${name}!`);
+      const suxessfullEnd = console.log(`Congratulations, ${name}!`);
+      return suxessfullEnd;
     }
     const answerAndQuestion = func();
     const subQuestion = answerAndQuestion[1];
