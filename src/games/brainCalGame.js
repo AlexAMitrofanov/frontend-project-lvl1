@@ -8,28 +8,28 @@ const getSign = () => {
   return result;
 };
 
-const calculate = (mass) => {
+const calculate = (a, b, sign) => {
   let result;
-  const num1 = +mass[0];
-  const num2 = +mass[2];
 
-  if (mass[1] === '+') {
-    result = num1 + num2;
+  if (sign === '+') {
+    result = a + b;
   }
-  if (mass[1] === '-') {
-    result = num1 - num2;
+  if (sign === '-') {
+    result = a - b;
   }
-  if (mass[1] === '*') {
-    result = num1 * num2;
+  if (sign === '*') {
+    result = a * b;
   }
   return result;
 };
 
 const getAnswAndQuest = () => {
-  const question = () => `${getNumber()} ${getSign()} ${getNumber()}`;
-  const questionForPlayer = question();
+  const questionForPlayer = `${getNumber()} ${getSign()} ${getNumber()}`;
   const questionForTransmission = questionForPlayer.split(' ');
-  const answer = calculate(questionForTransmission);
+  const firstNumber = questionForTransmission[0];
+  const secondNumber = questionForTransmission[2];
+  const sign = questionForTransmission[1];
+  const answer = calculate(firstNumber, secondNumber, sign);
   const result = [answer, questionForPlayer];
   return result;
 };
