@@ -1,12 +1,18 @@
-import { getAnswAndQuest } from '../cli.js';
+import { getNumberFromGap } from '../cli.js';
 import playGame from '../index.js';
 
 const isEven = (a) => (a % 2 === 0);
 
-const playEven = () => getAnswAndQuest(isEven);
+export const getAnswAndQuest = () => {
+  const gapForNumber = 100;
+  const question = getNumberFromGap(gapForNumber);
+  const answer = isEven(question) ? 'yes' : 'no';
+  const result = [answer, question];
+  return result;
+};
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEven = () => playGame(playEven, description);
+const playEven = () => playGame(getAnswAndQuest, description);
 
-export default gameEven;
+export default playEven;
