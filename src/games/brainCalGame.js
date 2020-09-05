@@ -3,7 +3,8 @@ import playGame from '../index.js';
 
 const getSign = () => {
   const operators = '+-*';
-  const signDeterminator = getNumberFromGap(operators.length);
+  const possibleMinOperatorsPossition = 0;
+  const signDeterminator = getNumberFromGap(operators.length, possibleMinOperatorsPossition);
   const result = operators[signDeterminator];
   return result;
 };
@@ -25,8 +26,9 @@ const calculateNumbers = (a, b, sign) => {
 
 const getAnswAndQuest = () => {
   const gapForNumbers = 100;
-  const firstNumber = getNumberFromGap(gapForNumbers);
-  const secondNumber = getNumberFromGap(gapForNumbers);
+  const possibleMinNum = 0;
+  const firstNumber = getNumberFromGap(gapForNumbers, possibleMinNum);
+  const secondNumber = getNumberFromGap(gapForNumbers, possibleMinNum);
   const sign = getSign();
   const questionForPlayer = `${firstNumber} ${sign} ${secondNumber}`;
   const answer = calculateNumbers(firstNumber, secondNumber, sign);
