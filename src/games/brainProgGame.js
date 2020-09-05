@@ -6,20 +6,21 @@ const getProgressionAndNumber = () => {
   const possibleMinStep = 1;
   const FirstNumProgressionAndPosition = 0;
   const roundNumber = getNumberFromGap(gapForNumAndStep, FirstNumProgressionAndPosition);
-  const stringLength = 10;
+  const progressionLength = 10;
   const step = getNumberFromGap(gapForNumAndStep, possibleMinStep);
-  const elementsPosition = getNumberFromGap(stringLength, FirstNumProgressionAndPosition);
+  const elementsPosition = getNumberFromGap(progressionLength, FirstNumProgressionAndPosition);
   let searchedNumber;
-  let string = '';
-  for (let i = 0; i < stringLength; i += 1) {
-    const nextElement = (i === elementsPosition) ? '..' : roundNumber + (i * step);
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    const nextElement = (i === elementsPosition) ? '..' : `${roundNumber + (i * step)}`;
     if (nextElement === '..') {
       searchedNumber = roundNumber + (i * step);
     }
-    string = `${string}${nextElement} `;
+    progression.push(nextElement);
   }
-  const progression = [string.substring(0, (string.length - 1))];
-  const result = [searchedNumber, progression];
+  const progressionForPlayer = progression.join(' ');
+
+  const result = [searchedNumber, progressionForPlayer];
   return result;
 };
 
