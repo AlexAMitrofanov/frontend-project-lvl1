@@ -17,8 +17,9 @@ const getDivisor = (a, b) => {
 
 const getAnswAndQuest = () => {
   const gapForNumbers = 100;
-  const firstNum = getNumberFromGap(gapForNumbers);
-  const secondNum = getNumberFromGap(gapForNumbers);
+  const possibleFirstNum = 0;
+  const firstNum = getNumberFromGap(gapForNumbers, possibleFirstNum);
+  const secondNum = getNumberFromGap(gapForNumbers, possibleFirstNum);
   const question = `${firstNum} ${secondNum}`;
   const answer = getDivisor(firstNum, secondNum);
   const result = [answer, question];
