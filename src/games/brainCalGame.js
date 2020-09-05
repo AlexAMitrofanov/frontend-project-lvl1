@@ -11,16 +11,17 @@ const getSign = () => {
 
 const calculateNumbers = (a, b, sign) => {
   let result;
+  switch (sign) {
+    case '+':
+      result = a + b;
+      break;
+    case '-':
+      result = a - b;
+      break;
+    default:
+      result = a * b;
+  }
 
-  if (sign === '+') {
-    result = a + b;
-  }
-  if (sign === '-') {
-    result = a - b;
-  }
-  if (sign === '*') {
-    result = a * b;
-  }
   return result;
 };
 
