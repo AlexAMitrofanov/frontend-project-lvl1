@@ -9,7 +9,8 @@ const playGame = (gameFunction, description) => {
 
   console.log(description);
   const playRounds = (round, function1) => {
-    if (round > 2) {
+    const RoundsQuantity = 2;
+    if (round > RoundsQuantity) {
       const suxessfullEnd = console.log(`Congratulations, ${name}!`);
       return suxessfullEnd;
     }
