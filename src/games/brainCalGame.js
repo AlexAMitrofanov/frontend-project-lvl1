@@ -25,7 +25,7 @@ const calculateNumbers = (a, b, sign) => {
   return result;
 };
 
-const getAnswAndQuest = () => {
+const getAnswerAndQuestion = () => {
   const gapForNumbers = 100;
   const possibleMinNum = 0;
   const firstNumber = getNumberFromGap(gapForNumbers, possibleMinNum);
@@ -39,6 +39,6 @@ const getAnswAndQuest = () => {
 
 const description = 'What is the result of the expression?';
 
-const playCalc = () => playGame(getAnswAndQuest, description);
+const playCalc = () => playGame(getAnswerAndQuestion, description);
 
 export default playCalc;

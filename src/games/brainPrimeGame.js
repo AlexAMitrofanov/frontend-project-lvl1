@@ -13,7 +13,7 @@ const isPrime = (a) => {
   return true;
 };
 
-const getAnswAndQuest = () => {
+const getAnswerAndQuestion = () => {
   const gapForNumber = 100;
   const possibleFirstNum = 0;
   const question = getNumberFromGap(gapForNumber, possibleFirstNum);
@@ -24,6 +24,6 @@ const getAnswAndQuest = () => {
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const playPrime = () => playGame(getAnswAndQuest, description);
+const playPrime = () => playGame(getAnswerAndQuestion, description);
 
 export default playPrime;

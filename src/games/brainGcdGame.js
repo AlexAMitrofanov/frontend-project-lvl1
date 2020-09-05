@@ -15,7 +15,7 @@ const getGreatestCommonDivisor = (a, b) => {
   return gcd;
 };
 
-const getAnswAndQuest = () => {
+const getAnswerAndQuestion = () => {
   const gapForNumbers = 100;
   const possibleFirstNum = 0;
   const firstNum = getNumberFromGap(gapForNumbers, possibleFirstNum);
@@ -28,6 +28,6 @@ const getAnswAndQuest = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const playGcd = () => playGame(getAnswAndQuest, description);
+const playGcd = () => playGame(getAnswerAndQuestion, description);
 
 export default playGcd;

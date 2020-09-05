@@ -3,7 +3,7 @@ import playGame from '../index.js';
 
 const isEven = (a) => (a % 2 === 0);
 
-export const getAnswAndQuest = () => {
+export const getAnswerAndQuestion = () => {
   const gapForNumber = 100;
   const possibleFirstNum = 0;
   const question = getNumberFromGap(gapForNumber, possibleFirstNum);
@@ -14,6 +14,6 @@ export const getAnswAndQuest = () => {
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const playEven = () => playGame(getAnswAndQuest, description);
+const playEven = () => playGame(getAnswerAndQuestion, description);
 
 export default playEven;
