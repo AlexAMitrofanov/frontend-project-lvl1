@@ -5,7 +5,8 @@ const isEven = (a) => (a % 2 === 0);
 
 export const getAnswAndQuest = () => {
   const gapForNumber = 100;
-  const question = getNumberFromGap(gapForNumber);
+  const possibleFirstNum = 0;
+  const question = getNumberFromGap(gapForNumber, possibleFirstNum);
   const answer = isEven(question) ? 'yes' : 'no';
   const result = [answer, question];
   return result;
