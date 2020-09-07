@@ -1,3 +1,3 @@
-const getNumberFromGap = (gap, firstNumber) => Math.floor(Math.random() * gap) + firstNumber;
+const getNumberFromGap = (minNum, maxNum) => Math.floor(Math.random() * maxNum) + minNum;
 
 export default getNumberFromGap;
