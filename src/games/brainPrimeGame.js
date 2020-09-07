@@ -14,9 +14,9 @@ const isPrime = (a) => {
 };
 
 const getAnswerAndQuestion = () => {
-  const gapForNumber = 100;
-  const possibleFirstNum = 0;
-  const question = getNumberFromGap(gapForNumber, possibleFirstNum);
+  const possibleMaxNum = 100;
+  const possibleMinNum = 0;
+  const question = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const answer = isPrime(question) ? 'yes' : 'no';
   const result = [answer, question];
   return result;

@@ -3,10 +3,10 @@ import playGame from '../index.js';
 
 const isEven = (a) => (a % 2 === 0);
 
-export const getAnswerAndQuestion = () => {
-  const gapForNumber = 100;
-  const possibleFirstNum = 0;
-  const question = getNumberFromGap(gapForNumber, possibleFirstNum);
+const getAnswerAndQuestion = () => {
+  const possibleMaxNum = 100;
+  const possibleMinNum = 0;
+  const question = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const answer = isEven(question) ? 'yes' : 'no';
   const result = [answer, question];
   return result;

@@ -2,19 +2,19 @@ import getNumberFromGap from '../cli.js';
 import playGame from '../index.js';
 
 const getProgressionAndNumber = () => {
-  const gapForNumAndStep = 100;
+  const possibleMaxNum = 100;
   const possibleMinStep = 1;
   const FirstNumProgressionAndPosition = 0;
-  const roundNumber = getNumberFromGap(gapForNumAndStep, FirstNumProgressionAndPosition);
+  const fisrtNumber = getNumberFromGap(FirstNumProgressionAndPosition, possibleMaxNum);
   const progressionLength = 10;
-  const step = getNumberFromGap(gapForNumAndStep, possibleMinStep);
-  const elementsPosition = getNumberFromGap(progressionLength, FirstNumProgressionAndPosition);
+  const step = getNumberFromGap(possibleMinStep, possibleMaxNum);
+  const elementsPosition = getNumberFromGap(FirstNumProgressionAndPosition, progressionLength);
   let searchedNumber;
   const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
-    const nextElement = (i === elementsPosition) ? '..' : `${roundNumber + (i * step)}`;
+    const nextElement = (i === elementsPosition) ? '..' : `${fisrtNumber + (i * step)}`;
     if (nextElement === '..') {
-      searchedNumber = roundNumber + (i * step);
+      searchedNumber = fisrtNumber + (i * step);
     }
     progression.push(nextElement);
   }

@@ -16,10 +16,10 @@ const getGreatestCommonDivisor = (a, b) => {
 };
 
 const getAnswerAndQuestion = () => {
-  const gapForNumbers = 100;
-  const possibleFirstNum = 0;
-  const firstNum = getNumberFromGap(gapForNumbers, possibleFirstNum);
-  const secondNum = getNumberFromGap(gapForNumbers, possibleFirstNum);
+  const possibleMaxNum = 100;
+  const possibleMinNum = 0;
+  const firstNum = getNumberFromGap(possibleMinNum, possibleMaxNum);
+  const secondNum = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const question = `${firstNum} ${secondNum}`;
   const answer = getGreatestCommonDivisor(firstNum, secondNum);
   const result = [answer, question];
