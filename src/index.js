@@ -11,8 +11,8 @@ const playGame = (gameFunction, description) => {
   const playRounds = (round, function1) => {
     const RoundsQuantity = 2;
     if (round > RoundsQuantity) {
-      const suxessfullEnd = console.log(`Congratulations, ${name}!`);
-      return suxessfullEnd;
+      const suxessfullEnd = `Congratulations, ${name}!`;
+      return console.log(suxessfullEnd);
     }
     const answerAndQuestion = function1();
     const subQuestion = answerAndQuestion[1];
@@ -24,9 +24,9 @@ const playGame = (gameFunction, description) => {
       console.log('Correct!');
       return playRounds(round + 1, function1);
     }
-    const wrongAnswer = console.log(`"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".
-Let's try again, ${name}!`);
-    return wrongAnswer;
+    const wrongAnswer = `"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".
+Let's try again, ${name}!`;
+    return console.log(wrongAnswer);
   };
 
   return playRounds(0, gameFunction);
