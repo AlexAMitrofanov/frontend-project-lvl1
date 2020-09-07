@@ -1,5 +1,3 @@
-import readlineSinc from 'readline-sync';
+const getNumberFromGap = (gap, firstNumber) => Math.floor(Math.random() * gap) + firstNumber;
 
-export const getName = () => readlineSinc.question('May I have your name? ');
-
-export const getNumberFromGap = (gap, firstNumber) => Math.floor(Math.random() * gap) + firstNumber;
+export default getNumberFromGap;

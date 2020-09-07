@@ -1,4 +1,4 @@
-import { getNumberFromGap } from '../cli.js';
+import getNumberFromGap from '../cli.js';
 import playGame from '../index.js';
 
 const getSign = (operators) => {
