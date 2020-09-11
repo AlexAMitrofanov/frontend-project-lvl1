@@ -12,12 +12,9 @@ const runGameEngine = (getAnswerAndQuestion, description) => {
       console.log(suxessfullEnd);
       return;
     }
-    const answerAndQuestion = getAnswAndQuest();
-    const subQuestion = answerAndQuestion[1];
-    const question = `Question: ${subQuestion}`;
-    console.log(question);
+    const [programsAnswer, question] = getAnswAndQuest();
+    console.log(`Question: ${question}`);
     const playersAnsw = readlineSinc.question('Your answer: ');
-    const programsAnswer = `${answerAndQuestion[0]}`;
     const wrongAnswer = `"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".`;
     const suggestionToPlayAgain = `Let's try again, ${name}!`;
     if (programsAnswer !== playersAnsw) {
