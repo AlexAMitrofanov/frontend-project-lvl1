@@ -8,7 +8,7 @@ const getSign = (operators) => {
   return result;
 };
 
-const calculateNumbers = (a, b, sign) => {
+const calculate = (a, b, sign) => {
   let result;
   switch (sign) {
     case '+':
@@ -31,9 +31,9 @@ const getAnswerAndQuestion = () => {
   const secondNumber = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const sign = getSign('+-*');
   const questionForPlayer = `${firstNumber} ${sign} ${secondNumber}`;
-  const answer = calculateNumbers(firstNumber, secondNumber, sign);
-  const result = [answer, questionForPlayer];
-  return result;
+  const answer = calculate(firstNumber, secondNumber, sign);
+  const answerAndQuestion = [answer, questionForPlayer];
+  return answerAndQuestion;
 };
 
 const description = 'What is the result of the expression?';

@@ -8,8 +8,8 @@ const getAnswerAndQuestion = () => {
   const possibleMinNum = 0;
   const question = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const answer = isEven(question) ? 'yes' : 'no';
-  const result = [answer, question];
-  return result;
+  const answerAndQuestion = [answer, question];
+  return answerAndQuestion;
 };
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

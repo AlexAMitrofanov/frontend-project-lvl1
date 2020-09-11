@@ -22,8 +22,8 @@ const getAnswerAndQuestion = () => {
   const secondNum = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const question = `${firstNum} ${secondNum}`;
   const answer = getGreatestCommonDivisor(firstNum, secondNum);
-  const result = [answer, question];
-  return result;
+  const answerAndQuestion = [answer, question];
+  return answerAndQuestion;
 };
 
 const description = 'Find the greatest common divisor of given numbers.';

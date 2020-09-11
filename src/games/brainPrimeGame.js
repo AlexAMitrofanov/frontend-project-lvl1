@@ -18,8 +18,8 @@ const getAnswerAndQuestion = () => {
   const possibleMinNum = 0;
   const question = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const answer = isPrime(question) ? 'yes' : 'no';
-  const result = [answer, question];
-  return result;
+  const answerAndQuestion = [answer, question];
+  return answerAndQuestion;
 };
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
