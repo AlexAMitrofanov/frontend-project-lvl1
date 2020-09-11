@@ -1,4 +1,4 @@
-import getNumberFromGap from '../cli.js';
+import getNumberFromGap from '../utils.js';
 import playGame from '../index.js';
 
 const getGreatestCommonDivisor = (a, b) => {
