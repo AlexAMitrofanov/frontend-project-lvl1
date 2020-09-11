@@ -1,6 +1,6 @@
 import readlineSinc from 'readline-sync';
 
-const playGame = (gameFunction, description) => {
+const runGameEngine = (gameFunction, description) => {
   console.log('Welcome to the Brain Games');
 
   const name = readlineSinc.question('May I have your name? ');
@@ -9,10 +9,11 @@ const playGame = (gameFunction, description) => {
 
   console.log(description);
   const playRounds = (round, function1) => {
-    const RoundsQuantity = 2;
-    if (round > RoundsQuantity) {
-      const suxessfullEnd = `Congratulations, ${name}!`;
-      return console.log(suxessfullEnd);
+    const RoundsQuantity = 3;
+    const suxessfullEnd = `Congratulations, ${name}!`;
+    if (round === RoundsQuantity) {
+      console.log(suxessfullEnd);
+      return;
     }
     const answerAndQuestion = function1();
     const subQuestion = answerAndQuestion[1];
@@ -22,14 +23,17 @@ const playGame = (gameFunction, description) => {
     const programsAnswer = `${answerAndQuestion[0]}`;
     if (programsAnswer === playersAnsw) {
       console.log('Correct!');
-      return playRounds(round + 1, function1);
+      playRounds(round + 1, function1);
     }
-    const wrongAnswer = `"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".
-Let's try again, ${name}!`;
-    return console.log(wrongAnswer);
+    if (programsAnswer !== playersAnsw) {
+      const wrongAnswer = `"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".`;
+      const suggestionToPlayAgain = `Let's try again, ${name}!`;
+      console.log(wrongAnswer);
+      console.log(suggestionToPlayAgain);
+    }
   };
 
   return playRounds(0, gameFunction);
 };
 
-export default playGame;
+export default runGameEngine;
