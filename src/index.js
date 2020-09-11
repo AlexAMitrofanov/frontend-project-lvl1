@@ -1,6 +1,6 @@
 import readlineSinc from 'readline-sync';
 
-const runGameEngine = (gameFunction, description) => {
+const runGameEngine = (getAnswerAndQuestion, description) => {
   console.log('Welcome to the Brain Games');
 
   const name = readlineSinc.question('May I have your name? ');
@@ -8,14 +8,14 @@ const runGameEngine = (gameFunction, description) => {
   console.log(`Hello, ${name}!`);
 
   console.log(description);
-  const playRounds = (round, function1) => {
+  const playRounds = (round, getAnswAndQuest) => {
     const RoundsQuantity = 3;
     const suxessfullEnd = `Congratulations, ${name}!`;
     if (round === RoundsQuantity) {
       console.log(suxessfullEnd);
       return;
     }
-    const answerAndQuestion = function1();
+    const answerAndQuestion = getAnswAndQuest();
     const subQuestion = answerAndQuestion[1];
     const question = `Question: ${subQuestion}`;
     console.log(question);
@@ -23,7 +23,7 @@ const runGameEngine = (gameFunction, description) => {
     const programsAnswer = `${answerAndQuestion[0]}`;
     if (programsAnswer === playersAnsw) {
       console.log('Correct!');
-      playRounds(round + 1, function1);
+      playRounds(round + 1, getAnswAndQuest);
     }
     if (programsAnswer !== playersAnsw) {
       const wrongAnswer = `"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".`;
@@ -33,7 +33,7 @@ const runGameEngine = (gameFunction, description) => {
     }
   };
 
-  return playRounds(0, gameFunction);
+  return playRounds(0, getAnswerAndQuestion);
 };
 
 export default runGameEngine;
