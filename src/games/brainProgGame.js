@@ -1,5 +1,5 @@
 import getNumberFromGap from '../utils.js';
-import playGame from '../index.js';
+import runGameEngine from '../index.js';
 
 const getAnswerAndQuestion = () => {
   const possibleMaxNum = 100;
@@ -26,6 +26,6 @@ const getAnswerAndQuestion = () => {
 
 const description = 'What number is missing in the progression?';
 
-const playProg = () => playGame(getAnswerAndQuestion, description);
+const playProg = () => runGameEngine(getAnswerAndQuestion, description);
 
 export default playProg;

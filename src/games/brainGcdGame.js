@@ -1,5 +1,5 @@
 import getNumberFromGap from '../utils.js';
-import playGame from '../index.js';
+import runGameEngine from '../index.js';
 
 const getGreatestCommonDivisor = (a, b) => {
   if (a === 0) {
@@ -28,6 +28,6 @@ const getAnswerAndQuestion = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const playGcd = () => playGame(getAnswerAndQuestion, description);
+const playGcd = () => runGameEngine(getAnswerAndQuestion, description);
 
 export default playGcd;

@@ -1,5 +1,5 @@
 import getNumberFromGap from '../utils.js';
-import playGame from '../index.js';
+import runGameEngine from '../index.js';
 
 const isEven = (a) => (a % 2 === 0);
 
@@ -14,6 +14,6 @@ const getAnswerAndQuestion = () => {
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const playEven = () => playGame(getAnswerAndQuestion, description);
+const playEven = () => runGameEngine(getAnswerAndQuestion, description);
 
 export default playEven;

@@ -1,5 +1,5 @@
 import getNumberFromGap from '../utils.js';
-import playGame from '../index.js';
+import runGameEngine from '../index.js';
 
 const getSign = (operators) => {
   const possibleMinOperatorsPossition = 0;
@@ -38,6 +38,6 @@ const getAnswerAndQuestion = () => {
 
 const description = 'What is the result of the expression?';
 
-const playCalc = () => playGame(getAnswerAndQuestion, description);
+const playCalc = () => runGameEngine(getAnswerAndQuestion, description);
 
 export default playCalc;

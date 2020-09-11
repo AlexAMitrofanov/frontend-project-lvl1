@@ -1,5 +1,5 @@
 import getNumberFromGap from '../utils.js';
-import playGame from '../index.js';
+import runGameEngine from '../index.js';
 
 const isPrime = (a) => {
   if (a < 2) {
@@ -24,6 +24,6 @@ const getAnswerAndQuestion = () => {
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const playPrime = () => playGame(getAnswerAndQuestion, description);
+const playPrime = () => runGameEngine(getAnswerAndQuestion, description);
 
 export default playPrime;
