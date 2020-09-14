@@ -17,7 +17,7 @@ const runGameEngine = (getAnswerAndQuestion, description) => {
     const playersAnsw = readlineSinc.question('Your answer: ');
     const wrongAnswer = `"${playersAnsw}" is the wrong answer ;(. Correct answer was "${programsAnswer}".`;
     const suggestionToPlayAgain = `Let's try again, ${name}!`;
-    if (programsAnswer !== playersAnsw) {
+    if (`${programsAnswer}` !== playersAnsw) {
       console.log(wrongAnswer);
       console.log(suggestionToPlayAgain);
       return;
