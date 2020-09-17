@@ -14,7 +14,7 @@
 
 - npm link
 ```
-
+### Description:
 **brain-even** - launches a game where a player receives a number, and have to answer whether this number is even, or not.
 
 **brain-prime** -  launches a game where a player receives a number, and have to answer whether this number is prime, or not.
@@ -25,7 +25,7 @@
 
 **brain-progression** - launches a game where a player receives a progression with a missing element inside, and have to give back the calculated missed element.
 
-### video showing the gameplay of the games:
+### videos showing the gameplay of the games:
 
 <a href="https://codeclimate.com/github/AlexAMitrofanov/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/4c852f6e43e6a3065969/maintainability" /></a>
 
