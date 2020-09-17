@@ -14,7 +14,7 @@ const getAnswerAndQuestion = () => {
   for (let i = 0; i < progressionLength; i += 1) {
     const nextElement = (i === answerPosition) ? '..' : `${fisrtNumber + (i * step)}`;
     if (nextElement === '..') {
-      searchedNumber = fisrtNumber + (i * step);
+      searchedNumber = `${fisrtNumber + (i * step)}`;
     }
     progression.push(nextElement);
   }

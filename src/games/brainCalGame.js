@@ -31,7 +31,7 @@ const getAnswerAndQuestion = () => {
   const secondNumber = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const sign = getSign('+-*');
   const questionForPlayer = `${firstNumber} ${sign} ${secondNumber}`;
-  const answer = calculate(firstNumber, secondNumber, sign);
+  const answer = `${calculate(firstNumber, secondNumber, sign)}`;
   const answerAndQuestion = [answer, questionForPlayer];
   return answerAndQuestion;
 };
