@@ -3,7 +3,8 @@
 ## Brain games is a terminal's games kit: brain-even, brain-prime, brain-calc, brain-gcd, brain-progression. 
 
 ### Installation:
- - open the terminal, go to the selected directory where the brain games will be seted
+```sh
+- open the terminal, go to the selected directory where the brain games will be seted
 
 - git clone https://github.com/AlexAMitrofanov/frontend-project-lvl1.git
 
@@ -12,7 +13,7 @@
 - make publish
 
 - npm link
-
+```
 
 **brain-even** - launches a game where a player receives a number, and have to answer whether this number is even, or not.
 
