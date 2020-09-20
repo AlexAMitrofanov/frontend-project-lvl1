@@ -32,9 +32,9 @@ const getAnswerAndQuestion = () => {
   const firstNumber = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const secondNumber = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const sign = getSign('+-*');
-  const questionForPlayer = `${firstNumber} ${sign} ${secondNumber}`;
+  const question = `${firstNumber} ${sign} ${secondNumber}`;
   const answer = calculate(firstNumber, secondNumber, sign).toString();
-  const answerAndQuestion = [answer, questionForPlayer];
+  const answerAndQuestion = [answer, question];
   return answerAndQuestion;
 };
 
