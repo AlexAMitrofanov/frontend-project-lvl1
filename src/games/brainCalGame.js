@@ -17,10 +17,12 @@ const calculate = (a, b, sign) => {
     case '-':
       result = a - b;
       break;
-    default:
+    case '*':
       result = a * b;
+      break;
+    default:
+      return NaN;
   }
-
   return result;
 };
 
@@ -31,7 +33,7 @@ const getAnswerAndQuestion = () => {
   const secondNumber = getNumberFromGap(possibleMinNum, possibleMaxNum);
   const sign = getSign('+-*');
   const questionForPlayer = `${firstNumber} ${sign} ${secondNumber}`;
-  const answer = `${calculate(firstNumber, secondNumber, sign)}`;
+  const answer = calculate(firstNumber, secondNumber, sign).toString();
   const answerAndQuestion = [answer, questionForPlayer];
   return answerAndQuestion;
 };

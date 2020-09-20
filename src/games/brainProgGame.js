@@ -9,18 +9,15 @@ const getAnswerAndQuestion = () => {
   const progressionLength = 10;
   const step = getNumberFromGap(possibleMinStep, possibleMaxNum);
   const answerPosition = getNumberFromGap(firstNumProgressionAndPosition, progressionLength);
-  let searchedNumber;
+  const searchedNumber = (fisrtNumber + (answerPosition * step)).toString();
   const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
-    const nextElement = (i === answerPosition) ? '..' : `${fisrtNumber + (i * step)}`;
-    if (nextElement === '..') {
-      searchedNumber = `${fisrtNumber + (i * step)}`;
-    }
+    const nextElement = (i === answerPosition) ? '..' : fisrtNumber + (i * step);
     progression.push(nextElement);
   }
-  const progressionForPlayer = progression.join(' ');
+  const question = progression.join(' ');
 
-  const answerAndQuestion = [searchedNumber, progressionForPlayer];
+  const answerAndQuestion = [searchedNumber, question];
   return answerAndQuestion;
 };
 

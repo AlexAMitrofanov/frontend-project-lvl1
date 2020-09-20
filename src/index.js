@@ -5,28 +5,25 @@ const runGameEngine = (getAnswerAndQuestion, description) => {
   const name = readlineSinc.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(description);
-  const playRounds = (round, getAnswAndQuest) => {
-    const roundsQuantity = 3;
-    const suxessfullEnd = `Congratulations, ${name}!`;
+  const roundsQuantity = 3;
+  const playRound = (round) => {
     if (round === roundsQuantity) {
-      console.log(suxessfullEnd);
+      console.log(`Congratulations, ${name}!`);
       return;
     }
-    const [rightAnswer, question] = getAnswAndQuest();
+    const [rightAnswer, question] = getAnswerAndQuestion();
     console.log(`Question: ${question}`);
     const playersAnswer = readlineSinc.question('Your answer: ');
-    const wrongAnswer = `"${playersAnswer}" is the wrong answer ;(. Correct answer was "${rightAnswer}".`;
-    const suggestionToPlayAgain = `Let's try again, ${name}!`;
     if (rightAnswer !== playersAnswer) {
-      console.log(wrongAnswer);
-      console.log(suggestionToPlayAgain);
+      console.log(`"${playersAnswer}" is the wrong answer ;(. Correct answer was "${rightAnswer}".`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
     console.log('Correct!');
-    playRounds(round + 1, getAnswAndQuest);
+    playRound(round + 1);
   };
 
-  return playRounds(0, getAnswerAndQuestion);
+  return playRound(0);
 };
 
 export default runGameEngine;
