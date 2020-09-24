@@ -10,12 +10,11 @@ const getAnswerAndQuestion = () => {
   const step = getNumberFromGap(possibleMinStep, possibleMaxNum);
   const answerPosition = getNumberFromGap(firstNumProgressionAndPosition, progressionLength);
   const answer = (fisrtNumber + (answerPosition * step)).toString();
-  const progression = [];
+  let question = '';
   for (let i = 0; i < progressionLength; i += 1) {
     const nextElement = (i === answerPosition) ? '..' : fisrtNumber + (i * step);
-    progression.push(nextElement);
+    question += `${nextElement} `;
   }
-  const question = progression.join(' ');
 
   const answerAndQuestion = [answer, question];
   return answerAndQuestion;

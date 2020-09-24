@@ -21,7 +21,7 @@ const calculate = (a, b, sign) => {
       result = a * b;
       break;
     default:
-      return NaN;
+      return null;
   }
   return result;
 };
