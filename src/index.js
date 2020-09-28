@@ -9,7 +9,7 @@ const runGameEngine = (getAnswerAndQuestion, description) => {
   const playRound = (round) => {
     if (round === roundsQuantity) {
       console.log(`Congratulations, ${name}!`);
-      return null;
+      return;
     }
     const [rightAnswer, question] = getAnswerAndQuestion();
     console.log(`Question: ${question}`);
@@ -17,13 +17,12 @@ const runGameEngine = (getAnswerAndQuestion, description) => {
     if (rightAnswer !== playersAnswer) {
       console.log(`"${playersAnswer}" is the wrong answer ;(. Correct answer was "${rightAnswer}".`);
       console.log(`Let's try again, ${name}!`);
-      return null;
+      return;
     }
     console.log('Correct!');
-    return playRound(round + 1);
+    playRound(round + 1);
   };
-
-  return playRound(0);
+  playRound(0);
 };
 
 export default runGameEngine;
