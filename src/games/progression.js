@@ -10,18 +10,17 @@ const getAnswerAndQuestion = () => {
   const step = getNumberFromGap(possibleMinStep, possibleMaxNum);
   const answerPosition = getNumberFromGap(firstNumProgressionAndPosition, progressionLength);
   const answer = (fisrtNumber + (answerPosition * step)).toString();
-  let question = '';
+  const question = [];
   for (let i = 0; i < progressionLength; i += 1) {
     const nextElement = (i === answerPosition) ? '..' : fisrtNumber + (i * step);
-    question += `${nextElement} `;
+    question.push(nextElement);
   }
-
-  const answerAndQuestion = [answer, question];
+  const answerAndQuestion = [answer, question.join(' ')];
   return answerAndQuestion;
 };
 
 const description = 'What number is missing in the progression?';
 
-const playProg = () => runGameEngine(getAnswerAndQuestion, description);
+const playProgression = () => runGameEngine(getAnswerAndQuestion, description);
 
-export default playProg;
+export default playProgression;
